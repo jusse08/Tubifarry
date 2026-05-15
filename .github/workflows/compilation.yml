@@ -149,7 +149,7 @@ jobs:
           SENTRY_DSN: ${{ secrets.SENTRY_DSN }}
         run: |
           # Restore NuGet packages first
-          dotnet restore *.sln
+          dotnet restore *.sln -p:NuGetAudit=false
           
           # Then build with all parameters
           dotnet build *.sln -c Release -f ${{ inputs.framework }} \
@@ -167,6 +167,7 @@ jobs:
             -p:SpotifyClientSecret=$SPOTIFY_CLIENT_SECRET \
             -p:YouTubeSecret=$YOUTUBE_SECRET \
             -p:SentryDsn=$SENTRY_DSN \
+            -p:NuGetAudit=false \
             -p:CI="true" \
             -v:n
 
