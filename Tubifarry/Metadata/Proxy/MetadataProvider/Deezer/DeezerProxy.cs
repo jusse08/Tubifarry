@@ -63,13 +63,10 @@ namespace Tubifarry.Metadata.Proxy.MetadataProvider.Deezer
             foreach (DeezerAlbum albumD in albumResults)
             {
                 Album album = DeezerMappingHelper.MapAlbumFromDeezerAlbum(albumD, artist);
-                album = DeezerMappingHelper.MergeAlbums(
-                    _albumService.FindById(artist.ForeignArtistId),
-                    album
-                );
-    albums.Add(album);
-}
+                album = DeezerMappingHelper.MergeAlbums(_albumService.FindById(artist.ForeignArtistId), album);
+                albums.Add(album);
             }
+
             return albums;
         }
 
