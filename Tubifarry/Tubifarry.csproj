@@ -6,6 +6,7 @@
 		<Nullable>enable</Nullable>
 		<AssemblyName>Lidarr.Plugin.$(MSBuildProjectName)</AssemblyName>
 		<AssemblyVersion>1.0.0.0</AssemblyVersion>
+		<WarningsNotAsErrors>NU1901;NU1902;NU1903;NU1904</WarningsNotAsErrors>
 		<CopyLocalLockFileAssemblies>true</CopyLocalLockFileAssemblies>
 		<Branch></Branch>
 		<Author>TypNull</Author>
